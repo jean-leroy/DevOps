@@ -16,6 +16,17 @@ public class Calculator {
 		res -= x;
 	}
 	
+	public void multiply(double... nb)
+	{
+		for ( double x : nb)
+		res *= x;
+	}
+	
+	public void divide(double nb)
+	{
+		res = res/nb;
+	}
+	
 	public double getResultat()
 	{
 		return res;

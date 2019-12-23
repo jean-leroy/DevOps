@@ -8,26 +8,43 @@ public class Menu {
 		// TODO Auto-generated method stub
 		
 		Calculator calc = new Calculator();
+		boolean quit = false;
+		char choice;
+		double nb;
 
 
-		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Make your choice : '+' for add | '-' for minus' ");
+		
+		do {
+		Scanner scanner = new Scanner(System.in);
 
-		char choice = scanner.next().charAt(0); 
+		System.out.println("\nMake your choice : \n'+' for add \n '-' for minus' \n'*' for multiply \n '/' for divide \n 'q' to quit");
+
+		choice = scanner.next().charAt(0); 
 		
 		System.out.println("Enter the number");
 
-		double nb = scanner.nextDouble();
-		scanner.close();
+		 nb = scanner.nextDouble();
 
 		switch (choice)
 		{
-		case '+' : 	calc.add(nb);
-		break;
-		case '-' : calc.minus(nb);
+			case '+' : 	calc.add(nb);
+						break;	
+			case '-' : calc.minus(nb);
+						break;
+			case '*' : calc.multiply(nb);
+						break;
+			case '/' : calc.divide(nb);
+						break;
+			case 'q' : quit=true;
+			scanner.close();
+
 		}
+
 		System.out.print(calc.getResultat());
+		
+		
+	} while (!quit);
 	}
 
 }
